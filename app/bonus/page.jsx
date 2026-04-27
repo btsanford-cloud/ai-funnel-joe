@@ -46,6 +46,10 @@ export default function BonusPage() {
           Most people watch this AI demo… and completely miss what actually
           makes it work.
         </h1>
+
+        <p className="mt-6 text-lg leading-relaxed text-neutral-300 sm:text-xl sm:leading-8">
+          This is why most people never get results from stuff like this.
+        </p>
       </section>
 
       {status !== "success" && (
@@ -57,8 +61,9 @@ export default function BonusPage() {
           </p>
 
           <p className="mt-6 text-lg leading-relaxed text-neutral-200 sm:text-xl sm:leading-8">
-            I watched the full build and broke it down step-by-step so you can
-            actually follow what&rsquo;s happening.
+            I sat through the entire build and pulled out the exact parts that
+            actually matter—so you don&rsquo;t waste time trying to figure it
+            out.
           </p>
 
           <p className="mt-12 text-lg font-semibold text-white sm:text-xl">
@@ -83,6 +88,11 @@ export default function BonusPage() {
       <section className="mt-10 w-full">
         {status !== "success" ? (
           <>
+            <p className="mb-5 text-center text-lg font-medium text-white sm:text-xl">
+              If you&rsquo;re going to watch this, don&rsquo;t do it without
+              this breakdown.
+            </p>
+
             <form onSubmit={handleSubmit} className="space-y-5">
               <input
                 type="email"
