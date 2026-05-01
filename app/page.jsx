@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 // ⬇️ REPLACE THIS with your real affiliate URL (or set NEXT_PUBLIC_AFFILIATE_URL in .env.local)
@@ -58,6 +60,14 @@ export default function BridgePage() {
             href={AFFILIATE_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              if (typeof window !== "undefined" && window.fbq) {
+                window.fbq("track", "ViewContent", {
+                  content_name: "AI Joe Webinar Bridge Page CTA",
+                  content_category: "Webinar",
+                });
+              }
+            }}
             className="inline-block w-full rounded-xl bg-emerald-500 px-10 py-5 text-xl font-bold text-neutral-950 shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/40 sm:w-auto sm:text-2xl"
           >
             Watch the AI Dashboard Live →

@@ -32,6 +32,14 @@ export default function BonusPage() {
       }
 
       setStatus("success");
+
+      // Fire Meta Pixel Lead event
+      if (typeof window !== "undefined" && window.fbq) {
+        window.fbq("track", "Lead", {
+          content_name: "AI Joe Webinar Breakdown",
+          content_category: "Lead Magnet",
+        });
+      }
     } catch (err) {
       console.error("Subscribe request failed:", err);
       setStatus("error");
